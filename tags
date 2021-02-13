@@ -1,0 +1,23 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/cyrilg/gitrepo/dotfiles/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210110.0/
+<C-f>	.vimrc	/^map <C-f> <plug>NERDTreeTabsClose<CR>$/;"	m
+<C-n>	.vimrc	/^map <C-n> <plug>NERDTreeTabsOpen<CR>$/;"	m
+<F5>	.vimrc	/^nnoremap <silent> <F5> :call SaveAndExecutePython()<CR>$/;"	m
+<F5>	.vimrc	/^vnoremap <silent> <F5> :<C-u>call SaveAndExecutePython()<CR>$/;"	m
+SaveAndExecutePython	.vimrc	/^function! SaveAndExecutePython()$/;"	f
+dotfiles	README.md	/^# dotfiles$/;"	c
+g:jellybeans_background_color_256	.vimrc	/^let g:jellybeans_background_color_256='232'$/;"	v
+g:lightline	.vimrc	/^let g:lightline = {$/;"	v
+g:load_doxygen_syntax	.vimrc	/^let g:load_doxygen_syntax=1$/;"	v
+g:rainbow_active	.vimrc	/^let g:rainbow_active = 1$/;"	v
+git_settings	.vimrc	/^let git_settings = system("git config --get vim.settings")$/;"	v
+python_highlight_all	.vimrc	/^let python_highlight_all = 1$/;"	v
