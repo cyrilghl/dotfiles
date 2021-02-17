@@ -1,6 +1,0 @@
-urxvt.termName: rxvt-256color
-urxvt.depth: 24
-urxvt.transparent:false
-urxvt.shading: 10
-urxvt.inheritPixmap: true
-urxvt.fading: 10
