@@ -91,7 +91,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/Music",
+					"bind": "/mnt/jarvis/music",
 					"container": "/music"
 				},
 				{
@@ -260,11 +260,11 @@
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/TV",
+					"bind": "/mnt/jarvis/tv",
 					"container": "/tv"
 				},
 				{
-					"bind": "/mnt/jarvis/Movies",
+					"bind": "/mnt/jarvis/movies",
 					"container": "/movies"
 				}
 			]
@@ -306,7 +306,7 @@
 					"container": "/downloads"
 				},
 				{
-					"bind": "/mnt/jarvis/Music",
+					"bind": "/mnt/jarvis/music",
 					"container": "/music"
 				}
 			]
@@ -711,7 +711,7 @@
 					"container": "/downloads"
 				},
 				{
-					"bind": "/mnt/jarvis/Movies",
+					"bind": "/mnt/jarvis/movies",
 					"container": "/movies"
 				}
 			]
@@ -746,7 +746,7 @@
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/Music",
+					"bind": "/mnt/jarvis/music",
 					"container": "/music"
 				}
 			]
@@ -1042,11 +1042,11 @@
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/TV",
+					"bind": "/mnt/jarvis/tv",
 					"container": "/data/tvshows"
 				},
 				{
-					"bind": "/mnt/jarvis/Movies",
+					"bind": "/mnt/jarvis/movies",
 					"container": "/data/movies"
 				}
 			]
@@ -1291,7 +1291,7 @@
 					"container": "/Downloads"
 				},
 				{
-					"bind": "/mnt/jarvis/Music",
+					"bind": "/mnt/jarvis/music",
 					"container": "/music"
 				}
 			]
@@ -1510,11 +1510,11 @@
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/TV",
+					"bind": "/mnt/jarvis/tv",
 					"container": "/data/tvshows"
 				},
 				{
-					"bind": "/mnt/jarvis/Movies",
+					"bind": "/mnt/jarvis/movies",
 					"container": "/data/movies"
 				}
 			]
@@ -1836,7 +1836,7 @@
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/TV",
+					"bind": "/mnt/jarvis/tv",
 					"container": "/tv"
 				},
 				{
@@ -2026,11 +2026,11 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/MusicBrainz",
+					"bind": "/mnt/jarvis/.config/appdata/musicBrainz",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/.config/appdata/MusicBrainz",
+					"bind": "/mnt/jarvis/.config/appdata/musicBrainz",
 					"container": "/data"
 				}
 			]
@@ -2596,11 +2596,11 @@
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/TV",
+					"bind": "/mnt/jarvis/tv",
 					"container": "/tv"
 				},
 				{
-					"bind": "/mnt/jarvis/Movies",
+					"bind": "/mnt/jarvis/movies",
 					"container": "/movies"
 				}
 			]
@@ -2826,7 +2826,7 @@
 					"container": "/downloads"
 				},
 				{
-					"bind": "/mnt/jarvis/Movies",
+					"bind": "/mnt/jarvis/movies",
 					"container": "/movies"
 				}
 			]
@@ -2999,7 +2999,7 @@
 					"container": "/downloads"
 				},
 				{
-					"bind": "/mnt/jarvis/TV",
+					"bind": "/mnt/jarvis/tv",
 					"container": "/tv"
 				}
 			]
@@ -3038,7 +3038,7 @@
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/TV",
+					"bind": "/mnt/jarvis/tv",
 					"container": "/tv"
 				},
 				{
@@ -3123,7 +3123,7 @@
 					"container": "/dev/rtc"
 				},
 				{
-					"bind": "/mnt/jarvis/TV",
+					"bind": "/mnt/jarvis/tv",
 					"container": "/tv"
 				},
 				{
@@ -3439,7 +3439,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/TVHeadend",
+					"bind": "/mnt/jarvis/.config/appdata/tvHeadend",
 					"container": "/config"
 				},
 				{
@@ -3753,7 +3753,7 @@
 					"container": "/downloads"
 				},
 				{
-					"bind": "/mnt/jarvis/Music",
+					"bind": "/mnt/jarvis/music",
 					"container": "/music"
 				}
 			]
