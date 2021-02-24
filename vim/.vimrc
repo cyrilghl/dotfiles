@@ -1,29 +1,4 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""
-" Description:
-"   This is the .vimrc file
-"
-" Maintainer:
-"   Kévin "Chewie" Sztern
-"   <chewie@deliciousmuffins.net>
-"
-" Complete_version:
-"   You can find the complete configuration,
-"   including all the plugins used, here:
-"   https://github.com/Chewie/configs
-"
-" Acknowledgements:
-"   Several elements of this .vimrc come from Pierre Bourdon's config
-"   You can find it here: https://bitbucket.org/delroth/configs/
-"
-""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""
-" General parameters
-""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -49,9 +24,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'scrooloose/nerdcommenter'
 Plug 'romainl/vim-qf'
 Plug 'frazrepo/vim-rainbow'
-Plug 'Chiel92/vim-autoformat'
 Plug 'rhysd/vim-clang-format'
-
+Plug 'vim-scripts/DoxygenToolkit.vim'
 " Snippets (don't really use them, but eh)
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -152,7 +126,7 @@ set t_vb=
 
 " Color the column after textwidth, usually the 80th
 if version >= 703
-  set colorcolumn=+1
+    set colorcolumn=+1
 endif
 
 " Display whitespace characters
@@ -320,5 +294,9 @@ if version >= 801
     packadd termdebug
 endif
 
-    au BufWrite * :Autoformat
+au BufWrite * :Autoformat
 
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:DoxygenToolkit_authorName="Cyril GHALI"
