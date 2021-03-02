@@ -1,9 +1,0 @@
-*.o
-*.a
-*.so
-*.gch
-*.pyc
-.ssh/*
-.vim/.netrwhist
-.DS_Store
-a.out
