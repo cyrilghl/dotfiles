@@ -1,10 +1,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""
-
-" TODO: At some point I'll need to switch over to the native Vim 8.0 package
-" feature. Either via manual git subtree management, or maybe through minpac?
-"
 " Install vim-plug if we don't already have it
 " Credit to github.com/captbaritone
 if empty(glob("~/.vim/autoload/plug.vim"))
@@ -18,54 +14,27 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " Bag of mappings
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-unimpaired'
-Plug 'scrooloose/nerdcommenter'
-Plug 'romainl/vim-qf'
-Plug 'frazrepo/vim-rainbow'
 Plug 'rhysd/vim-clang-format'
-Plug 'vim-scripts/DoxygenToolkit.vim'
-Plug 'https://github.com/junegunn/goyo.vim'
-Plug 'https://github.com/junegunn/limelight.vim'
-" Snippets (don't really use them, but eh)
-Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'https://github.com/arcticicestudio/nord-vim'
-Plug 'https://github.com/nanotech/jellybeans.vim'
-
-" Navigation
-Plug 'tpope/vim-vinegar'
-Plug 'ctrlpvim/ctrlp.vim' " TODO: I don't really use that anymore.
-Plug 'mileszs/ack.vim'
-
-" Theming
-Plug 'nanotech/jellybeans.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-" Filetype specific plugins
-Plug 'pearofducks/ansible-vim'
-Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'vim-pandoc/vim-pandoc'
-Plug '5long/pytest-vim-compiler'
-Plug 'hashivim/vim-terraform'
-
-" Tag management
-Plug 'ludovicchabant/vim-gutentags'
-
-" 'IDE' features
+Plug 'gosukiwi/vim-atom-dark'
+Plug 'zxqfl/tabnine-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
-Plug 'janko/vim-test'
+Plug 'vim-test/vim-test'
+Plug 'nanotech/jellybeans.vim'
 
+Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
+"bug fix for octol
+let c_no_curly_error=1
 
 " Enable filetype detection for plugins and indentation options
 filetype plugin indent on
 
 " Reload a file when it is changed from the outside
 set autoread
+hi CursorLine guifg=NONE guibg=#2d3c45 ctermbg=237 gui=NONE term=NONE cterm=NONE
+
 
 " Write the file when we leave the buffer
 set autowrite
@@ -87,13 +56,10 @@ set hidden
 " In this configuration, it is particularly useful for the tagbar plugin
 set updatetime=500
 
-" For some stupid reason, vim requires the term to begin with "xterm", so the
-" automatically detected "rxvt-unicode-256color" doesn't work.
-set term=xterm-256color
-
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " User interface
 """"""""""""""""""""""""""""""""""""""""""""""""""
+
 
 " Make backspace behave as expected
 set backspace=eol,indent,start
@@ -128,7 +94,6 @@ set wildmode=longest:full,list:full
 set visualbell
 set t_vb=
 
-" Color the column after textwidth, usually the 80th
 
 " Display whitespace characters
 set list
@@ -213,7 +178,6 @@ let mapleader = ","
 
 " Toggle paste mode
 noremap <leader>pp :setlocal paste!<cr>
-
 " Move between rows in wrapped lines
 noremap j gj
 noremap k gk
@@ -232,9 +196,11 @@ noremap ; :
 noremap <leader>cw :botright :cw<cr>
 
 " Run make silently, then skip the 'Press ENTER to continue'
-noremap <leader>m :silent! :make! \| :redraw!<cr>
-
+"noremap <leader>m :silent! :make! \| :redraw!<cr>
+noremap <leader>m :Dispatch<cr>
+noremap <leader>d :silent! :Dispatch!<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""
+noremap ² :w<cr>
 " Persistence options
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -257,56 +223,38 @@ endif
 " Plugin mappings and options
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-" Use a slightly darker background color to differentiate with the status line
-let g:jellybeans_background_color_256='233'
-
 " Feel free to switch to another colorscheme
-colorscheme jellybeans
+"colorscheme atom-dark
 
-" Disable Ack.vim's mappings on the quickfix and location list windows
-" We use vim-qf mappings instead
-let g:ack_apply_qmappings = 0
-let g:ack_apply_lmappings = 0
-let g:qf_mapping_ack_style = 1
-
-" Override unimpaired quickfix and loc-list mappings to use vim-qf wrapparound
-let g:nremap = {"[q": "", "]q": "", "[l": "", "]l": ""}
-nmap [q <Plug>(qf_qf_previous)
-nmap ]q <Plug>(qf_qf_next)
-nmap [l <Plug>(qf_loc_previous)
-nmap ]l <Plug>(qf_loc_next)
 
 " Launch fugitive's gstatus
 noremap <leader>gs :Gstatus<cr>
 
 " Mappings for vim-test
 nmap <silent> <leader>ts :TestSuite<cr>
-
+nmap <silent> <leader>gt :Dispatch ./gtest<cr>
 " Tell vim-test to use dispatch to run our tests
 let test#strategy = "dispatch"
 
 " Tell Dispatch to use the pytest compiler when we call pytest (the compiler
 " file looks for py.test instead of pytest)
-let g:dispatch_compilers = {'pytest': 'pytest'}
+"let g:dispatch_compilers = {'pytest': 'pytest'}
+let g:dispatch_compilers = {'gtest' : './gtest'}
+
 
 " Add the termdebug built-in plugin
 if version >= 801
     packadd termdebug
 endif
 
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:DoxygenToolkit_authorName="Cyril GHALI"
+hi Normal ctermbg=none
+let g:clang_format#auto_format=1
 
-" Color name (:help cterm-colors) or ANSI code
-let g:limelight_conceal_ctermfg = 'gray'
-let g:limelight_conceal_ctermfg = 240
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
+set nocompatible
+filetype plugin on
+syntax on
 
+let g:jellybeans_background_color_256='232'
 
-let g:goyo_width=80
-let g:limelight_defaut_coefficient = 0.7
-
-nnoremap <F8> :wq <CR>
+" Feel free to switch to another colorscheme
+colorscheme jellybeans
