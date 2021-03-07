@@ -8,12 +8,12 @@
 	        "description": "AdGuard Home is a network-wide software for blocking ads & tracking. After you set it up, it’ll cover ALL your home devices, and you don’t need any client-side software for that. With the rise of Internet-Of-Things and connected devices, it becomes more and more important to be able to control your whole network.",
 	        "env": [
 		        {
-		          "default": "1000",
+		          "default": "1002",
 		          "label": "PUID",
 		          "name": "PUID"
 		        },
 		        {
-		          "default": "1000",
+		          "default": "1002",
 		          "label": "PGID",
 		          "name": "PGID"
 		        },
@@ -43,11 +43,11 @@
 	        "type": 1,
 	        "volumes": [
 		        {
-		          "bind": "/mnt/jarvis/.config/appdata/Adguard/Workdir",
+		          "bind": "/appdata/Adguard/Workdir",
 		          "container": "/opt/adguardhome/work"
 		        },
 		        {
-		          "bind": "/mnt/jarvis/.config/appdata/Adguard/Conf",
+		          "bind": "/appdata/Adguard/Conf",
 		          "container": "/opt/adguardhome/conf"
 		        }
         	]
@@ -59,12 +59,12 @@
 			"description": "Airsonic is a free, web-based media streamer, providing ubiqutious access to your music. Use it to share your music with friends, or to listen to your own music while at work. You can stream to multiple players simultaneously, for instance to one player in your kitchen and another in your living room.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				},
@@ -91,23 +91,23 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/music",
+					"bind": "/mnt/nas/public/music",
 					"container": "/music"
 				},
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Airsonic/Playlists",
+					"bind": "/appdata/Airsonic/Playlists",
 					"container": "/playlists"
 				},
 				{
-					"bind": "/mnt/jarvis/Podcasts",
+					"bind": "/mnt/nas/public/Podcasts",
 					"container": "/podcasts"
 				},
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Airsonic/Media",
+					"bind": "/appdata/Airsonic/Media",
 					"container": "/media"
 				},
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Airsonic/",
+					"bind": "/appdata/Airsonic/",
 					"container": "/config"
 				}
 			]
@@ -138,7 +138,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Authelia",
+					"bind": "/appdata/Authelia",
 					"container": "/etc/authelia/"
 				}
 			]
@@ -162,7 +162,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/EmbyStat",
+					"bind": "/appdata/EmbyStat",
 					"container": "/config"
 				}
 			]
@@ -186,7 +186,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Snibox",
+					"bind": "/appdata/Snibox",
 					"container": "/app/db/database"
 				}
 			]
@@ -217,7 +217,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Authelia",
+					"bind": "/appdata/Authelia",
 					"container": "/etc/authelia/"
 				}
 			]
@@ -230,12 +230,12 @@
 			"description": "Bazarr is a companion application to Sonarr and Radarr. It can manage and download subtitles based on your requirements. You define your preferences by TV show or movie and Bazarr takes care of everything for you.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				},
@@ -256,15 +256,15 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Bazarr",
+					"bind": "/appdata/Bazarr",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/tv",
+					"bind": "/mnt/nas/public/tv",
 					"container": "/tv"
 				},
 				{
-					"bind": "/mnt/jarvis/movies",
+					"bind": "/mnt/nas/public/movies",
 					"container": "/movies"
 				}
 			]
@@ -276,12 +276,12 @@
 			"description": "The purpose of beets is to get your music collection right once and for all. It catalogs your collection, automatically improving its metadata as it goes using the MusicBrainz database. Then it provides a bouquet of tools for manipulating and accessing your music.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -298,15 +298,15 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Beets",
+					"bind": "/appdata/Beets",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/downloads",
+					"bind": "/mnt/nas/public/downloads",
 					"container": "/downloads"
 				},
 				{
-					"bind": "/mnt/jarvis/music",
+					"bind": "/mnt/nas/public/music",
 					"container": "/music"
 				}
 			]
@@ -330,7 +330,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Bitwarden-rs",
+					"bind": "/appdata/Bitwarden-rs",
 					"container": "/config"
 				}
 			]
@@ -343,12 +343,12 @@
 			"description": "Booksonic is a server and an app for streaming your audiobooks to any pc or android phone. Most of the functionality is also availiable on other platforms that have apps for subsonic",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				},
@@ -370,15 +370,15 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/Books",
+					"bind": "/mnt/nas/public/Books",
 					"container": "/books"
 				},
 				{
-					"bind": "/mnt/jarvis/Files/Podcasts",
+					"bind": "/mnt/nas/public/Podcasts",
 					"container": "/podcast"
 				},
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Booksonic",
+					"bind": "/appdata/Booksonic",
 					"container": "/config"
 				}
 			]
@@ -390,12 +390,12 @@
 			"description": "Bookstack is a free and open source Wiki designed for creating beautiful documentation. Feautring a simple, but powerful WYSIWYG editor it allows for teams to create detailed and useful documentation with ease.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				},
@@ -434,12 +434,12 @@
 			"description": "COPS links to your Calibre library database and allows downloading and emailing of books directly from a web browser and provides a OPDS feed to connect to your devices.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -456,11 +456,11 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/Books",
+					"bind": "/mnt/nas/public/Books",
 					"container": "/books"
 				},
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Cops",
+					"bind": "/appdata/Cops",
 					"container": "/config"
 				}
 			]
@@ -473,12 +473,12 @@
 			"description": "Calibre Web is a web app providing a clean interface for browsing, reading and downloading eBooks using an existing Calibre database.\n\n  [br][br]\n  [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]\n  [b]/config[/b] Where Calibre-web should store it's database[br]\n  [b]/books[/b] Path to your calibre library metadata.db file[br]",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -495,11 +495,11 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/Books",
+					"bind": "/mnt/nas/public/Books",
 					"container": "/books"
 				},
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Calibre-web",
+					"bind": "/appdata/Calibre-web",
 					"container": "/config"
 				}
 			]
@@ -513,12 +513,12 @@
 			"description": "Chevereto is a powerful and fast image hosting script that allows you to create your very own full featured image hosting website in just minutes. Please note that this offers only the free Chevereto version..",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				},
@@ -582,7 +582,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Chowdown",
+					"bind": "/appdata/Chowdown",
 					"container": "/config"
 				}
 			]
@@ -595,12 +595,12 @@
 			"description": "Code-server is VS Code running on a remote server, accessible through the browser.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "GUID"
 				},
@@ -634,7 +634,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Code-Server",
+					"bind": "/appdata/Code-Server",
 					"container": "/config"
 				}
 			]
@@ -646,12 +646,12 @@
 			"description": "Codiad is a web-based IDE framework with a small footprint and minimal requirements.\n  ",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -668,7 +668,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Codiad",
+					"bind": "/appdata/Codiad",
 					"container": "/config"
 				}
 			]
@@ -681,12 +681,12 @@
 			"description": "CouchPotato (CP) is an automatic NZB and torrent downloader. You can keep a \"movies I want\"-list and it will search for NZBs/torrents of these movies every X hours. Once a movie is found, it will send it to SABnzbd or download the torrent to a specified directory.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -703,15 +703,15 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Couchpotato",
+					"bind": "/appdata/Couchpotato",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/downloads",
+					"bind": "/mnt/nas/public/downloads",
 					"container": "/downloads"
 				},
 				{
-					"bind": "/mnt/jarvis/movies",
+					"bind": "/mnt/nas/public/movies",
 					"container": "/movies"
 				}
 			]
@@ -723,12 +723,12 @@
 			"description": "DAAP (iTunes) media server with support for AirPlay devices, Apple Remote (and compatibles), MPD and internet radio.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -742,11 +742,11 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Daapd",
+					"bind": "/appdata/Daapd",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/music",
+					"bind": "/mnt/nas/public/music",
 					"container": "/music"
 				}
 			]
@@ -769,7 +769,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Dashmachine",
+					"bind": "/appdata/Dashmachine",
 					"container": "/dashmachine/dashmachine/user_data"
 				}
 			]
@@ -783,12 +783,12 @@
 			"description": "davos is an FTP automation tool that periodically scans given host locations for new files. It can be configured for various purposes, including listening for specific files to appear in the host location, ready for it to download and then move, if required. It also supports completion notifications as well as downstream API calls, to further the workflow.\r\n\r\n/config : AppData Location\r\n/download : File Download Location",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -805,11 +805,11 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Davos",
+					"bind": "/appdata/Davos",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/downloads",
+					"bind": "/mnt/nas/public/downloads",
 					"container": "/downloads"
 				}
 			]
@@ -833,11 +833,11 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/DeeMix",
+					"bind": "/appdata/DeeMix",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/downloads",
+					"bind": "/mnt/nas/public/downloads",
 					"container": "/downloads"
 				}
 			]
@@ -849,12 +849,12 @@
 			"description": "Deluge is a lightweight, Free Software, cross-platform BitTorrent client providing: Full Encryption, WebUI, Plugin System, Much more...",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				},
@@ -873,11 +873,11 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Deluge",
+					"bind": "/appdata/Deluge",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/downloads",
+					"bind": "/mnt/nas/public/downloads",
 					"container": "/downloads"
 				}
 			]
@@ -890,12 +890,12 @@
 			"description": "Domoticz is a Home Automation System that lets you monitor and configure various devices like: Lights, Switches, various sensors/meters like Temperature, Rain, Wind, UV, Electra, Gas, Water and much more. Notifications/Alerts can be sent to any mobile device",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -914,7 +914,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Domoticz",
+					"bind": "/appdata/Domoticz",
 					"container": "/config"
 				}
 			]
@@ -937,12 +937,12 @@
 					"set": ""
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -966,12 +966,12 @@
 			"description": "Free backup software to store encrypted backups online, Duplicati works with standard protocols like FTP, SSH, WebDAV as well as popular services like Microsoft OneDrive, Amazon Cloud Drive and S3, Google Drive, box.com, Mega, hubiC and many others.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -988,7 +988,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Duplicati",
+					"bind": "/appdata/Duplicati",
 					"container": "/config"
 				},
 				{
@@ -1011,12 +1011,12 @@
 			"description": "Emby organizes video, music, live TV, and photos from personal media libraries and streams them to smart TVs, streaming boxes and mobile devices. This container is packaged as a standalone emby Media Server.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				},
@@ -1038,15 +1038,15 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Emby",
+					"bind": "/appdata/Emby",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/tv",
+					"bind": "/mnt/nas/public/tv",
 					"container": "/data/tvshows"
 				},
 				{
-					"bind": "/mnt/jarvis/movies",
+					"bind": "/mnt/nas/public/movies",
 					"container": "/data/movies"
 				}
 			]
@@ -1070,11 +1070,11 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/FileBrowser",
+					"bind": "/appdata/FileBrowser",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/.config/appdata/",
+					"bind": "/appdata/",
 					"container": "/myfiles"
 				}
 			]
@@ -1086,12 +1086,12 @@
 			"description": "A free, self-hostable rss aggregator…",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -1108,7 +1108,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/freshrss",
+					"bind": "/appdata/freshrss",
 					"container": "/config"
 				}
 			]
@@ -1122,12 +1122,12 @@
 			"description": "A WebApp Comic Reader for your favorite digital comics. Reach and read your comic library from any web connected device with a modern web browser",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -1141,15 +1141,15 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Gazee",
+					"bind": "/appdata/Gazee",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/Comics",
+					"bind": "/mnt/nas/public/Comics",
 					"container": "/comics"
 				},
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Gazee",
+					"bind": "/appdata/Gazee",
 					"container": "/mylar"
 				}
 			]
@@ -1173,7 +1173,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Guacamole",
+					"bind": "/appdata/Guacamole",
 					"container": "/config"
 				}
 			]
@@ -1187,12 +1187,12 @@
 			"description": "Grocy is an ERP system for your kitchen! Cut down on food waste, and manage your chores with this brilliant utulity.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				},
@@ -1213,7 +1213,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Grocy",
+					"bind": "/appdata/Grocy",
 					"container": "/config"
 				}
 			]
@@ -1227,12 +1227,12 @@
 			"description": "HTPC Manaager, a front end for many htpc related applications. Hellowlol version.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -1249,7 +1249,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/HTPCmanager",
+					"bind": "/appdata/HTPCmanager",
 					"container": "/config"
 				}
 			]
@@ -1261,12 +1261,12 @@
 			"description": null,
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -1283,15 +1283,15 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Headphones",
+					"bind": "/appdata/Headphones",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/downloads",
+					"bind": "/mnt/nas/public/downloads",
 					"container": "/Downloads"
 				},
 				{
-					"bind": "/mnt/jarvis/music",
+					"bind": "/mnt/nas/public/music",
 					"container": "/music"
 				}
 			]
@@ -1305,12 +1305,12 @@
 			"description": "Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -1328,7 +1328,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Heimdall",
+					"bind": "/appdata/Heimdall",
 					"container": "/config"
 				}
 			]
@@ -1352,11 +1352,11 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Homer/assets",
+					"bind": "/appdata/Homer/assets",
 					"container": "/www/assets"
 				},
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Homer",
+					"bind": "/appdata/Homer",
 					"container": "/www/config.yml"
 				}
 			]
@@ -1379,7 +1379,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/huginn",
+					"bind": "/appdata/huginn",
 					"container": "/var/lib/mysql"
 				}
 			]
@@ -1439,12 +1439,12 @@
 			"description": "Jackett works as a proxy server it translates queries from apps like Sonarr etc into tracker-site-specific http queries and parses the html response sending results back to the requesting software.[",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -1461,11 +1461,11 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Jackett",
+					"bind": "/appdata/Jackett",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/downloads",
+					"bind": "/mnt/nas/public/downloads",
 					"container": "/downloads"
 				}
 			]
@@ -1479,12 +1479,12 @@
 			"description": "Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				},
@@ -1506,15 +1506,15 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Jelllyfin",
+					"bind": "/appdata/Jelllyfin",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/tv",
+					"bind": "/mnt/nas/public/tv",
 					"container": "/data/tvshows"
 				},
 				{
-					"bind": "/mnt/jarvis/movies",
+					"bind": "/mnt/nas/public/movies",
 					"container": "/data/movies"
 				}
 			]
@@ -1526,12 +1526,12 @@
 			"description": "Headless installation of Kodi™ (formerly known as XBMC™), to enable library updates.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -1549,7 +1549,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Kodi",
+					"bind": "/appdata/Kodi",
 					"container": "/config"
 				}
 			]
@@ -1561,12 +1561,12 @@
 			"description": "LazyLibrarian is a program to follow authors and grab metadata for all your digital reading needs.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -1626,12 +1626,12 @@
 					"set": "2048"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				},
@@ -1659,7 +1659,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/LetsEncrypt",
+					"bind": "/appdata/LetsEncrypt",
 					"container": "/config"
 				}
 			]
@@ -1682,7 +1682,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/LibreSpeed",
+					"bind": "/appdata/LibreSpeed",
 					"container": "/config"
 				}
 			]
@@ -1697,12 +1697,12 @@
 			"description": "Lychee is a free photo-management tool, which runs on your server or web-space. Installing is a matter of seconds. Upload, manage and share photos like from a native application. Lychee comes with everything you need and all your photos are stored securely.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -1719,11 +1719,11 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Lychee",
+					"bind": "/appdata/Lychee",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/Pictures",
+					"bind": "/mnt/nas/public/Pictures",
 					"container": "/pictures"
 				}
 			]
@@ -1736,12 +1736,12 @@
 			"description": "An Enhanced drop in replacement for Mysql",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				},
@@ -1763,7 +1763,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Mariadb",
+					"bind": "/appdata/Mariadb",
 					"container": "/config"
 				}
 			]
@@ -1775,12 +1775,12 @@
 			"description": "McMyAdmin 2 is the leading web control panel and administration console for Minecraft servers.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -1810,12 +1810,12 @@
 			"description": "Medusa, automatic Video Library Manager for TV Shows. It watches for new episodes of your favorite shows, and when they are posted it does its magic.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -1832,15 +1832,15 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Medusa",
+					"bind": "/appdata/Medusa",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/tv",
+					"bind": "/mnt/nas/public/tv",
 					"container": "/tv"
 				},
 				{
-					"bind": "/mnt/jarvis/downloads",
+					"bind": "/mnt/nas/public/downloads",
 					"container": "/downloads"
 				}
 			]
@@ -1852,12 +1852,12 @@
 			"description": "Server version of minetest, a free, open source alternative to minecraft.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -1887,12 +1887,12 @@
 			"description": "Minisatip is a multi-threaded satip server version 1.2 that runs under Linux and it was tested with DVB-S, DVB-S2, DVB-T, DVB-T2, DVB-C, DVB-C2, ATSC and ISDB-T cards.\n\n  The application is designed to stream the requested data to multiple clients (even with one dvb card) at the same time while opening different pids.\n  ",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -1928,11 +1928,11 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Mstream",
+					"bind": "/appdata/Mstream",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/downloads",
+					"bind": "/mnt/nas/public/downloads",
 					"container": "/music"
 				}
 			]
@@ -1946,12 +1946,12 @@
 			"description": "Mumble is a voicechat program for gamers written on top of Qt and Opus. Murmur is the server backend for Mumble.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				},
@@ -1977,15 +1977,15 @@
 					"container": "/etc/localtime"
 				},
 				{
-					"bind": "/mnt/jarvis/Files/Config/Murmur",
+					"bind": "/mnt/nas/public/Config/Murmur",
 					"container": "/opt/murmur/config"
 				},
 				{
-					"bind": "/mnt/jarvis/Files/Murmur/data",
+					"bind": "/mnt/nas/public/Murmur/data",
 					"container": "/opt/murmur/data"
 				},
 				{
-					"bind": "/mnt/jarvis/Files/Murmur/log",
+					"bind": "/mnt/nas/public/Murmur/log",
 					"container": "/opt/murmur/log"
 				}
 			]
@@ -2004,12 +2004,12 @@
 					"set": ""
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -2026,11 +2026,11 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/musicBrainz",
+					"bind": "/appdata/musicBrainz",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/.config/appdata/musicBrainz",
+					"bind": "/appdata/musicBrainz",
 					"container": "/data"
 				}
 			]
@@ -2045,12 +2045,12 @@
 			"description": "A lightweight portal to view, manage your HTPC apps without having to run anything more than a PHP enabled webserver. With Muximux you don't need to keep multiple tabs open, or bookmark the URL to all of your apps.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -2067,7 +2067,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Muximux",
+					"bind": "/appdata/Muximux",
 					"container": "/config"
 				}
 			]
@@ -2080,12 +2080,12 @@
 			"description": "An automated Comic Book downloader (cbr/cbz) for use with SABnzbd, NZBGet and torrents.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -2102,15 +2102,15 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Mylar",
+					"bind": "/appdata/Mylar",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/downloads",
+					"bind": "/mnt/nas/public/downloads",
 					"container": "/downloads"
 				},
 				{
-					"bind": "/mnt/jarvis/Comics",
+					"bind": "/mnt/nas/public/Comics",
 					"container": "/comics"
 				}
 			]
@@ -2119,15 +2119,15 @@
 			"categories": [
 				"Downloaders"
 			],
-			"description": "NZBGet is a usenet downloader, written in C++ and designed with performance in mind to achieve maximum download speed by using very little system resources. It supports all platforms including Windows, Mac, Linux and works on all devices including PC, NAS, WLAN routers and media players",
+			"description": "NZBGet is a usenet downloader, written in C++ and designed with performance in mind to achieve maximum download speed by using very little system resources. It supports all platforms including Windows, Mac, Linux and works on all devices including PC, nas/public, WLAN routers and media players",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -2144,11 +2144,11 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Nzbget",
+					"bind": "/appdata/Nzbget",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/downloads",
+					"bind": "/mnt/nas/public/downloads",
 					"container": "/downloads"
 				}
 			]
@@ -2162,12 +2162,12 @@
 			"description": "NZBHydra is a meta search for NZB indexers and the \"spiritual successor\" to NZBmegasearcH. It provides easy access to a number of raw and newznab based indexers.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -2184,11 +2184,11 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Nzbhydra2",
+					"bind": "/appdata/Nzbhydra2",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/downloads",
+					"bind": "/mnt/nas/public/downloads",
 					"container": "/downloads"
 				}
 			]
@@ -2204,12 +2204,12 @@
 			"description": "Where are your photos and documents? With Nextcloud you pick a server of your choice, at home, in a data center or at a provider. And that is where your files will be. Nextcloud runs on that server, protecting your data and giving you access from your desktop or mobile devices.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				},
@@ -2249,12 +2249,12 @@
 			"description": "Nginx is a web server with a strong focus on high concurrency, performance and low memory usage. It can also act as a reverse proxy server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer and an HTTP cache.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -2272,7 +2272,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Nginx",
+					"bind": "/appdata/Nginx",
 					"container": "/config"
 				}
 			]
@@ -2297,7 +2297,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Nginx-Proxy",
+					"bind": "/appdata/Nginx-Proxy",
 					"container": "/config"
 				}
 			]
@@ -2309,12 +2309,12 @@
 			"description": "OScam is a softcam, software to be used to decrypt digital television channels on a settopbox (receiver), as an alternative for a conditional access module\n  (CAM). OScam is, compared with other softcams (CCcam, mgcamd, etc.), open source. Hence, the name Open Source Conditional Access Module (OScam). OScam is based on the\n  not so well known softcam MpCS. The main features of OSCam are next to its softcam capabilities, that it is able to function as a cardserver.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -2325,14 +2325,14 @@
 			"platform": "linux",
 			"ports": [
 				"8888:8888/tcp",
-				"10000:10000/tcp"
+				"10020:10020/tcp"
 			],
 			"restart_policy": "unless-stopped",
 			"title": "OScam",
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/OScam",
+					"bind": "/appdata/OScam",
 					"container": "/config"
 				}
 			]
@@ -2347,12 +2347,12 @@
 			"description": "Ombi allows you to host your own Plex Request and user management system. ",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -2369,7 +2369,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Ombi",
+					"bind": "/appdata/Ombi",
 					"container": "/config"
 				}
 			]
@@ -2386,12 +2386,12 @@
 					"set": "eth0"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -2410,7 +2410,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/OpenVPN-AS",
+					"bind": "/appdata/OpenVPN-AS",
 					"container": "/config"
 				}
 			]
@@ -2423,12 +2423,12 @@
 			"description": "Organizr allows you to setup Tabs that will be loaded all in one webpage. You can then work on your server with ease.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -2445,7 +2445,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Organizr",
+					"bind": "/appdata/Organizr",
 					"container": "/config"
 				}
 			]
@@ -2457,12 +2457,12 @@
 			"description": "A simple, easy way to turn a photo album into a webgallery",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -2479,15 +2479,15 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/Pictures",
+					"bind": "/mnt/nas/public/Pictures",
 					"container": "/Pictures"
 				},
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Photoshow/Thumbs",
+					"bind": "/appdata/Photoshow/Thumbs",
 					"container": "/Thumbs"
 				},
 				{
-					"bind": "/mnt/jarvis/.config/appdata/PhotoShow",
+					"bind": "/appdata/PhotoShow",
 					"container": "/config"
 				}
 			]
@@ -2515,11 +2515,11 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/PiHole",
+					"bind": "/appdata/PiHole",
 					"container": "/etc/pihole"
 				},
 				{
-					"bind": "/mnt/jarvis/.config/appdata/PiHole/DNS",
+					"bind": "/appdata/PiHole/DNS",
 					"container": "/etc/dnsmasq.d"
 				}
 			]
@@ -2531,12 +2531,12 @@
 			"description": "Piwigo is photo gallery software for the web, built by an active community of users and developers.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -2553,7 +2553,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/PiWigo",
+					"bind": "/appdata/PiWigo",
 					"container": "/config"
 				}
 			]
@@ -2567,12 +2567,12 @@
 			"description": "Your favorite movies, TV, music, web shows, podcasts, and more, all streamed to your favorite screens.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				},
@@ -2592,15 +2592,15 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Plex",
+					"bind": "/appdata/Plex",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/tv",
+					"bind": "/mnt/nas/public/tv",
 					"container": "/tv"
 				},
 				{
-					"bind": "/mnt/jarvis/movies",
+					"bind": "/mnt/nas/public/movies",
 					"container": "/movies"
 				}
 			]
@@ -2615,12 +2615,12 @@
 			"description": "Simple automated way for users to request new content for Plex.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				},
@@ -2642,7 +2642,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/PlexRequests",
+					"bind": "/appdata/PlexRequests",
 					"container": "/config"
 				}
 			]
@@ -2657,12 +2657,12 @@
 			"description": "ProjectSend is a self-hosted application that lets you upload files and assign them to specific clients that you create yourself! Secure, private and easy. No more depending on external services or e-mail to send those files!\n  ",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -2679,11 +2679,11 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/ProjectSend",
+					"bind": "/appdata/ProjectSend",
 					"container": "/data"
 				},
 				{
-					"bind": "/mnt/jarvis/.config/appdata/ProjectSend",
+					"bind": "/appdata/ProjectSend",
 					"container": "/config"
 				}
 			]
@@ -2710,7 +2710,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/ProtonMail-Bridge",
+					"bind": "/appdata/ProtonMail-Bridge",
 					"container": "/root"
 				}
 			]
@@ -2723,12 +2723,12 @@
 			"description": "Pydio (formerly AjaXplorer) is a mature open source software solution for file sharing and synchronization. With intuitive user interfaces (web / mobile / desktop), Pydio provides enterprise-grade features to gain back control and privacy of your data: user directory connectors, legacy filesystems drivers, comprehensive admin interface, and much more.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -2745,11 +2745,11 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Pydio",
+					"bind": "/appdata/Pydio",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Pydio",
+					"bind": "/appdata/Pydio",
 					"container": "/data"
 				}
 			]
@@ -2761,12 +2761,12 @@
 			"description": "Quassel IRC is a modern, cross-platform, distributed IRC client, meaning that one (or multiple) client(s) can attach to and detach from a central core -- much like the popular combination of screen and a text-based IRC client such as WeeChat, but graphical. Blowfish support and optional web-ui included.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -2783,7 +2783,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Quassel-core",
+					"bind": "/appdata/Quassel-core",
 					"container": "/config"
 				}
 			]
@@ -2796,12 +2796,12 @@
 			"description": "Radarr - A fork of Sonarr to work with movies à la Couchpotato.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -2818,15 +2818,15 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Radarr",
+					"bind": "/appdata/Radarr",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/downloads",
+					"bind": "/mnt/nas/public/downloads",
 					"container": "/downloads"
 				},
 				{
-					"bind": "/mnt/jarvis/movies",
+					"bind": "/mnt/nas/public/movies",
 					"container": "/movies"
 				}
 			]
@@ -2849,7 +2849,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/ReactiveResume",
+					"bind": "/appdata/ReactiveResume",
 					"container": "/usr/src/app"
 				}
 			]
@@ -2864,12 +2864,12 @@
 			"description": "Resilio Sync (formerly BitTorrent Sync) uses the BitTorrent protocol to sync files and folders between all of your devices. There are both free and paid versions, this container supports both.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -2883,14 +2883,14 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Resilio-Sync",
+					"bind": "/appdata/Resilio-Sync",
 					"container": "/config"
 				},
 				{
 					"container": "/sync"
 				},
 				{
-					"bind": "/mnt/jarvis/downloads",
+					"bind": "/mnt/nas/public/downloads",
 					"container": "/downloads"
 				}
 			]
@@ -2902,12 +2902,12 @@
 			"description": "SABnzbd makes Usenet as simple and streamlined as possible by automating everything we can. All you have to do is add an .nzb. SABnzbd takes over from there, where it will be automatically downloaded, verified, repaired, extracted and filed away with zero human interaction.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -2925,15 +2925,15 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Sabnzbd",
+					"bind": "/appdata/Sabnzbd",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/downloads",
+					"bind": "/mnt/nas/public/downloads",
 					"container": "/downloads"
 				},
 				{
-					"bind": "/mnt/jarvis/downloads/incomplete",
+					"bind": "/mnt/nas/public/downloads/incomplete",
 					"container": "/incomplete-downloads"
 				}
 			]
@@ -2956,7 +2956,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Shiori",
+					"bind": "/appdata/Shiori",
 					"container": "/srv/shiori"
 				}
 			]
@@ -2969,12 +2969,12 @@
 			"description": "Automatic Video Library Manager for TV Shows. It watches for new episodes of your favorite shows, and when they are posted it does its magic.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -2991,15 +2991,15 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/SickChill",
+					"bind": "/appdata/SickChill",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/downloads",
+					"bind": "/mnt/nas/public/downloads",
 					"container": "/downloads"
 				},
 				{
-					"bind": "/mnt/jarvis/tv",
+					"bind": "/mnt/nas/public/tv",
 					"container": "/tv"
 				}
 			]
@@ -3012,12 +3012,12 @@
 			"description": "SickGear provides management of TV shows and/or Anime, it detects new episodes, links downloader apps, and more.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -3034,15 +3034,15 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/SickGear",
+					"bind": "/appdata/SickGear",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/tv",
+					"bind": "/mnt/nas/public/tv",
 					"container": "/tv"
 				},
 				{
-					"bind": "/mnt/jarvis/downloads",
+					"bind": "/mnt/nas/public/downloads",
 					"container": "/downloads"
 				}
 			]
@@ -3054,12 +3054,12 @@
 			"description": null,
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -3076,11 +3076,11 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Smokeping",
+					"bind": "/appdata/Smokeping",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Smokeping",
+					"bind": "/appdata/Smokeping",
 					"container": "/data"
 				}
 			]
@@ -3093,12 +3093,12 @@
 			"description": "Sonarr (formerly NZBdrone) is a PVR for usenet and bittorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -3115,7 +3115,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Sonarr",
+					"bind": "/appdata/Sonarr",
 					"container": "/config"
 				},
 				{
@@ -3123,11 +3123,11 @@
 					"container": "/dev/rtc"
 				},
 				{
-					"bind": "/mnt/jarvis/tv",
+					"bind": "/mnt/nas/public/tv",
 					"container": "/tv"
 				},
 				{
-					"bind": "/mnt/jarvis/downloads",
+					"bind": "/mnt/nas/public/downloads",
 					"container": "/downloads"
 				}
 			]
@@ -3142,12 +3142,12 @@
 			"description": null,
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -3166,7 +3166,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Syncthing",
+					"bind": "/appdata/Syncthing",
 					"container": "/config"
 				},
 				{
@@ -3182,12 +3182,12 @@
 			"description": "Tautulli is a 3rd party application that you can run along side your Plex Media Server to monitor activity and track various statistics. Most importantly, these statistics include what has been watched, who watched it, when and where they watched it, and how it was watched. All statistics are presented in a nice and clean interface with many tables and graphs, which makes it easy to brag about your server to everyone else.[br][br]\r\n  [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]\r\n  [b]8181[/b] The webui for Tautulli's webui [br]\r\n  [b]/config[/b] Storing Configuration and the Tautulli database[br]\r\n[b]/logs[/b] Map to you plex logs (required for IP logging)[br]\r\n\r\n",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -3204,11 +3204,11 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/Logs",
+					"bind": "/mnt/nas/public/Logs",
 					"container": "/logs"
 				},
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Tautulli",
+					"bind": "/appdata/Tautulli",
 					"container": "/config"
 				}
 			]
@@ -3220,12 +3220,12 @@
 			"description": "A self-hosted web IRC client",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -3242,7 +3242,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/TheLounge",
+					"bind": "/appdata/TheLounge",
 					"container": "/config"
 				}
 			]
@@ -3265,7 +3265,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/TiddlyWiki",
+					"bind": "/appdata/TiddlyWiki",
 					"container": "/var/lib/tiddlywiki"
 				}
 			]
@@ -3277,12 +3277,12 @@
 			"description": "Tiny Tiny RSS is an open source web-based news feed (RSS/Atom) reader and aggregator, designed to allow you to read news from any location, while feeling as close to a real desktop application as possible.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -3299,7 +3299,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/tt-rss",
+					"bind": "/appdata/tt-rss",
 					"container": "/config"
 				}
 			]
@@ -3311,12 +3311,12 @@
 			"description": "Transmission is designed for easy, powerful use. Transmission has the features you want from a BitTorrent client: encryption, a web interface, peer exchange, magnet links, DHT, µTP, UPnP and NAT-PMP port forwarding, webseed support, watch directories, tracker editing, global and per-torrent speed limits, and more.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -3334,11 +3334,11 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Transmission",
+					"bind": "/appdata/Transmission",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/Files/Downloads",
+					"bind": "/mnt/nas/public/Downloads",
 					"container": "/downloads"
 				},
 				{
@@ -3355,12 +3355,12 @@
 			"description": "This container contains OpenVPN and Transmission with a configuration\nwhere Transmission is running only when OpenVPN has an active tunnel.\nIt bundles configuration files for many popular VPN providers to make the setup easier.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				},
@@ -3399,7 +3399,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/downloads",
+					"bind": "/mnt/nas/public/downloads",
 					"container": "/data"
 				},
 				{
@@ -3416,12 +3416,12 @@
 			"description": "Tvheadend is a TV streaming server and recorder for Linux, FreeBSD and Android supporting DVB-S, DVB-S2, DVB-C, DVB-T, ATSC, ISDB-T, IPTV, SAT\u0026gt;IP and HDHomeRun as input sources.\r\nTvheadend offers the HTTP (VLC, MPlayer), HTSP (Kodi, Movian) and SAT\u0026gt;IP streaming.\r\nMultiple EPG sources are supported (over-the-air DVB and ATSC including OpenTV DVB extensions, XMLTV, PyXML).",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -3439,7 +3439,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/tvHeadend",
+					"bind": "/appdata/tvHeadend",
 					"container": "/config"
 				},
 				{
@@ -3460,12 +3460,12 @@
 					"set": "512"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -3501,12 +3501,12 @@
 			"description": null,
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -3517,7 +3517,7 @@
 			"platform": "linux",
 			"ports": [
 				"3478:3478/udp",
-				"10001:10001/udp",
+				"10021:10021/udp",
 				"8080:8080/tcp",
 				"8081:8081/tcp",
 				"8443:8443/tcp",
@@ -3530,7 +3530,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Unifi",
+					"bind": "/appdata/Unifi",
 					"container": "/config"
 				}
 			]
@@ -3564,12 +3564,12 @@
 			"description": "WebGrab+Plus is a multi-site incremental xmltv epg grabber. It collects tv-program guide data from selected tvguide sites for your favourite channels.[br]\r\n\t\tOptional postprocessors to add IMDb data or to customize your xmltv listing.[br]\r\n\t\thttp://www.webgrabplus.com/[br]\r\n\t\t[b][span style='color: #E80000;']Directions:[/span][/b][br]\r\n\t\t[b]/config[/b] : This is where WebGrab+Plus will store it's configuration.[br][br]\r\n\t\t[b]/data[/b] : This is where tv_grab_wg script in the Tvheadend container looks for the guide.xml file.[br][br]",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -3583,11 +3583,11 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/WebGrabPlus",
+					"bind": "/appdata/WebGrabPlus",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/.config/appdata/WebGrabPlus",
+					"bind": "/appdata/WebGrabPlus",
 					"container": "/data"
 				}
 			]
@@ -3610,7 +3610,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Whoogle",
+					"bind": "/appdata/Whoogle",
 					"container": "/config"
 				}
 			]
@@ -3633,11 +3633,11 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Wikijs",
+					"bind": "/appdata/Wikijs",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Wikijs/data",
+					"bind": "/appdata/Wikijs/data",
 					"container": "/data"
 				}
 			]
@@ -3660,23 +3660,23 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/YTDLM",
+					"bind": "/appdata/YTDLM",
 					"container": "/app/appdata"
 				},
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Youtube/Video",
+					"bind": "/appdata/Youtube/Video",
 					"container": "/app/video"
 				},
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Youtube/Subscriptions",
+					"bind": "/appdata/Youtube/Subscriptions",
 					"container": "/app/subscriptions"
 				},
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Youtube/Users",
+					"bind": "/appdata/Youtube/Users",
 					"container": "/app/users"
 				},
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Youtube/Audio",
+					"bind": "/appdata/Youtube/Audio",
 					"container": "/app/audio"
 				}
 			]
@@ -3688,12 +3688,12 @@
 			"description": "ZNC is an IRC network bouncer or BNC. It can detach the client from the actual IRC server, and also from selected channels. Multiple clients from different locations can connect to a single ZNC account simultaneously and therefore appear under the same nickname on IRC.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -3710,7 +3710,7 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/ZNC",
+					"bind": "/appdata/ZNC",
 					"container": "/config"
 				}
 			]
@@ -3723,12 +3723,12 @@
 			"description": "Lidarr is a music collection manager for Usenet and BitTorrent users.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -3745,15 +3745,15 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/Lidarr",
+					"bind": "/appdata/Lidarr",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/downloads",
+					"bind": "/mnt/nas/public/downloads",
 					"container": "/downloads"
 				},
 				{
-					"bind": "/mnt/jarvis/music",
+					"bind": "/mnt/nas/public/music",
 					"container": "/music"
 				}
 			]
@@ -3765,12 +3765,12 @@
 			"description": "The qBittorrent project aims to provide an open-source software alternative to µTorrent. qBittorrent is based on the Qt toolkit and libtorrent-rasterbar library.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -3789,11 +3789,11 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/qBittorrent",
+					"bind": "/appdata/qBittorrent",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/downloads",
+					"bind": "/mnt/nas/public/downloads",
 					"container": "/downloads"
 				}
 			]
@@ -3832,12 +3832,12 @@
 			"description": "Popular torrent client with a webui for ease of use.",
 			"env": [
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PUID",
 					"name": "PUID"
 				},
 				{
-					"default": "1000",
+					"default": "1002",
 					"label": "PGID",
 					"name": "PGID"
 				}
@@ -3856,11 +3856,11 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/mnt/jarvis/.config/appdata/ruTorrent",
+					"bind": "/appdata/ruTorrent",
 					"container": "/config"
 				},
 				{
-					"bind": "/mnt/jarvis/downloads",
+					"bind": "/mnt/nas/public/downloads",
 					"container": "/downloads"
 				}
 			]
