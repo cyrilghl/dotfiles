@@ -22,9 +22,18 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
 Plug 'vim-test/vim-test'
 Plug 'nanotech/jellybeans.vim'
-
 Plug 'octol/vim-cpp-enhanced-highlight'
-call plug#end()
+
+" Filetype specific plugins
+ Plug 'pearofducks/ansible-vim'
+ Plug 'vim-pandoc/vim-pandoc-syntax'
+ Plug 'vim-pandoc/vim-pandoc'
+ Plug '5long/pytest-vim-compiler'
+ Plug 'hashivim/vim-terraform'
+
+
+
+  plug#end()
 "bug fix for octol
 let c_no_curly_error=1
 
