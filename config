@@ -43,8 +43,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
-bindsym $mod+b exec brave 
+bindsym $mod+Return exec urxvt
+bindsym $mod+b exec firefox
 # kill focused window
 bindsym $mod+Shift+q kill
 for_window [class="Termite"] focus
