@@ -33,7 +33,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 
 
 
-  plug#end()
+call  plug#end()
 "bug fix for octol
 let c_no_curly_error=1
 
