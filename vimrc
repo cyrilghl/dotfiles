@@ -17,7 +17,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'rhysd/vim-clang-format'
 Plug 'honza/vim-snippets'
 Plug 'gosukiwi/vim-atom-dark'
-Plug 'zxqfl/tabnine-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
 Plug 'vim-test/vim-test'
